@@ -1,59 +1,43 @@
-# Koffiebar
+## Oef 1
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.0.
+Een 18 tal bestanden werden aangemaakt. Het langste duurde om de packages te installen.
 
-## Development server
+## Oef 2
 
-To start a local development server, run:
+In de terminal.
 
-```bash
-ng serve
-```
+## Oef 3
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- 22.2, Je mag hogere versie's ook gebruiken zolang het dezelfde major is.
+- Omdat dit enkel moet gebruikt worden indien je aan het ontwikkelen bent, niet voor te runnen.
+- ng serve
+- main.ts, geeft de controle aan de componenten.
+- Hier staan alle componenten in.
+- Bij angular zijn veel meer dependencies dan bij express en meer scripts.
 
-## Code scaffolding
+## Oef 4
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Deze wist dit door package.json. Een simpele static webserver is voldoende.
 
-```bash
-ng generate component component-name
-```
+## Oef 5
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Een class, een cofig en een directive. Dry run is om te testen, het maakt niets echt aan. Het kijkt na of het wel werkt.
 
-```bash
-ng generate --help
-```
+## Oef 6
 
-## Building
+1. Je voegt de import toe vanboven in app.ts.
+2. Je voegt de component toe in app.html.
 
-To build the project run:
+## Oef 7
 
-```bash
-ng build
-```
+-app
+----bestelknop
+----drankkaart
+----hoofding
+----voettekst
+--------openingsuren
+Css werkt enkel op eigen component en alles wat dat component bevat.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Oef 8
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+De 2 knoppen delen hun aantal niet. Dit komt doordat ze beide eigen componenten zijn en er geen gedeelde variabele is waarin een state wordt opgeslagen. Je moet niet alles renderen.
