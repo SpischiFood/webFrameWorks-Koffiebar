@@ -1,6 +1,6 @@
 <ul>
   @for (drank of dranken(); track $index) {
-    <app-drank-tegel [drank]="drank"></app-drank-tegel>
+    <app-drank-tegel [drank]="drank" (bestel)="bestel.emit($event)"></app-drank-tegel>
   }
 </ul>
 <p>Bij alle koffie's worden koekjes geserveerd.</p>

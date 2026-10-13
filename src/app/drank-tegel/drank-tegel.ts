@@ -1,4 +1,4 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, input, signal, output } from '@angular/core';
 import { Drank, DRANKEN } from '../dranken';
 import { Badge } from '../badge/badge';
 
@@ -10,4 +10,5 @@ import { Badge } from '../badge/badge';
 })
 export class DrankTegel {
   drank = input.required<Drank>();
+  bestel = output<Drank>();
 }

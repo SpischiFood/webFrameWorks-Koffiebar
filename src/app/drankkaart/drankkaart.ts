@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, output } from '@angular/core';
 import { Drank, DRANKEN } from '../dranken';
 import { DrankTegel } from '../drank-tegel/drank-tegel';
 
@@ -10,4 +10,5 @@ import { DrankTegel } from '../drank-tegel/drank-tegel';
 })
 export class Drankkaart {
   dranken = signal<Drank[]>(DRANKEN);
+  bestel = output<Drank>();
 }

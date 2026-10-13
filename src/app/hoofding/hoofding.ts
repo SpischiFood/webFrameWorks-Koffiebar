@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   imports: [],
@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './hoofding.css',
   templateUrl: './hoofding.html',
 })
-export class Hoofding {}
+export class Hoofding {
+  aantal = input.required<number>();
+}
