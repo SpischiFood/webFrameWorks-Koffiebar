@@ -41,3 +41,8 @@ Css werkt enkel op eigen component en alles wat dat component bevat.
 ## Oef 8
 
 De 2 knoppen delen hun aantal niet. Dit komt doordat ze beide eigen componenten zijn en er geen gedeelde variabele is waarin een state wordt opgeslagen. Je moet niet alles renderen.
+
+## Oef 2 labo 3
+
+Required input 'label' from component Badge must be specified.ngtsc(-998008)
+Type '"paars"' is not assignable to type '"groen" | "grijs" | "rood"'.

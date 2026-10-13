@@ -1,0 +1,10 @@
+<li>
+  <h3 [class.uitverkocht]="drank().beschikbaar === false">{{ drank().naam }}</h3>
+  <span>Prijs: €{{ drank().prijs }}</span>
+  @if (drank().nieuw) {
+    <app-badge label="nieuw" kleur="rood"></app-badge>
+  }
+  @if (drank().vegan) {
+    <app-badge label="vegan" kleur="groen"></app-badge>
+  }
+</li>
