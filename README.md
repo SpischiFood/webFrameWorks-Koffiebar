@@ -46,3 +46,7 @@ De 2 knoppen delen hun aantal niet. Dit komt doordat ze beide eigen componenten 
 
 Required input 'label' from component Badge must be specified.ngtsc(-998008)
 Type '"paars"' is not assignable to type '"groen" | "grijs" | "rood"'.
+
+## Oef 4 labo 3
+
+De fooi is state die wordt beheerd door de `Bonnetje`-component. Alleen deze component heeft het fooipercentage nodig om het totaalbedrag te berekenen. Volgens het principe _state leeft in de laagste gemeenschappelijke ouder die de gegevens nodig heeft_ (§2.14), hoeft deze state dus niet in `App` te staan. `App` beheert enkel de bestelling, omdat meerdere componenten die gebruiken.

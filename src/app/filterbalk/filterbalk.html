@@ -1,0 +1,10 @@
+<section class="filterbalk">
+  <div class="filter-buttons">
+    @for (categorie of categorieen; track categorie) {
+      <button (click)="keuze.set(categorie)" [class.actief]="keuze() === categorie">
+        {{ categorie }}
+      </button>
+    }
+    <button (click)="keuze.set('alle')" [class.actief]="keuze() === 'alle'">Alle</button>
+  </div>
+</section>

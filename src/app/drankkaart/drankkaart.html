@@ -1,5 +1,5 @@
 <ul>
-  @for (drank of dranken(); track $index) {
+  @for (drank of dranken().sort((a, b) => a.naam.localeCompare(b.naam)); track $index) {
     <app-drank-tegel [drank]="drank" (bestel)="bestel.emit($event)"></app-drank-tegel>
   }
 </ul>

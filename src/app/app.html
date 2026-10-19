@@ -1,4 +1,9 @@
 <app-bonnetje [bonnetje]="bestelling()" (verwijder)="verwijder($event)" />
 <app-hoofding [aantal]="totaalAantal()" />
-<app-drankkaart (bestel)="bestel($event)" />
+<app-filterbalk [(keuze)]="keuze" />
+<div class="zoekbalk">
+  <input [(ngModel)]="zoekterm" placeholder="Zoek..." />
+  <p>{{ zichtbaar().length }} van {{ DRANKEN.length }} items</p>
+</div>
+<app-drankkaart [dranken]="zichtbaar()" (bestel)="bestel($event)" />
 <app-voettekst />

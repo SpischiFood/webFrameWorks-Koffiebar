@@ -1,4 +1,5 @@
 import { Component, signal, computed } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 //import { RouterOutlet } from '@angular/router';
 import { Hoofding } from './hoofding/hoofding';
 import { Drankkaart } from './drankkaart/drankkaart';
@@ -6,17 +7,19 @@ import { Drankkaart } from './drankkaart/drankkaart';
 import { Bonnetje } from './bonnetje/bonnetje';
 import { Voettekst } from './voettekst/voettekst';
 import { Bestellijn } from './bestellijn';
-import { Drank } from './dranken';
+import { Drank, DRANKEN } from './dranken';
 import { Badge } from './badge/badge';
+import { Filterbalk } from './filterbalk/filterbalk';
 
 @Component({
-  imports: [Hoofding, Drankkaart, Voettekst, Bonnetje],
+  imports: [Hoofding, Drankkaart, Voettekst, Bonnetje, Filterbalk, FormsModule],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
 export class App {
   protected readonly title = signal('koffiebar');
+  DRANKEN = DRANKEN;
   bestelling = signal<Bestellijn[]>([]);
   bestel(drank: Drank) {
     const lijn = this.bestelling.update((lijst) => {
@@ -35,4 +38,19 @@ export class App {
       return lijst.filter((lijn) => lijn.drank.id !== id);
     });
   }
+  keuze = signal('alle');
+
+  zoekterm = signal('');
+
+  zichtbaar = computed(() => {
+    let lijst;
+    if (this.keuze() === 'alle') {
+      lijst = DRANKEN;
+    } else {
+      lijst = DRANKEN.filter((drank) => drank.categorie === this.keuze());
+    }
+    return lijst.filter((drank) =>
+      drank.naam.toLowerCase().includes(this.zoekterm().toLocaleLowerCase()),
+    );
+  });
 }
