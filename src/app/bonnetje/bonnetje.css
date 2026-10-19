@@ -1,0 +1,189 @@
+:host {
+  display: block;
+  width: 100%;
+  max-width: 380px;
+}
+
+.bonnetje {
+  background-color: #ffffff;
+  border: 1px solid #e8e3dc;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
+
+  font-family: Arial, sans-serif;
+  color: #302b28;
+}
+
+/* Hoofding */
+
+.bonnetje-header {
+  text-align: center;
+  padding-bottom: 20px;
+  border-bottom: 2px dashed #e5e0da;
+}
+
+.bonnetje-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.bonnetje-header p {
+  margin: 8px 0 0;
+  color: #918b84;
+  font-size: 13px;
+}
+
+/* Bestellijnen */
+
+.bestellijnen {
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+  border-bottom: 1px solid #e8e3dc;
+}
+
+.bestellijn {
+  display: grid;
+  grid-template-columns: 1fr 80px 28px;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.bestellijn:last-child {
+  margin-bottom: 0;
+}
+
+.prijs {
+  white-space: nowrap;
+  font-weight: 600;
+  text-align: right;
+}
+
+.leeg {
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
+
+/* Samenvatting */
+
+.samenvatting {
+  padding: 18px 0;
+  border-bottom: 1px solid #e8e3dc;
+}
+
+.samenvatting-rij {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  color: #666;
+  font-size: 14px;
+}
+
+.samenvatting-rij:last-child {
+  margin-bottom: 0;
+}
+
+.korting {
+  color: #31804b;
+}
+
+/* Fooi */
+
+.fooi-sectie {
+  padding: 20px 0;
+}
+
+.fooi-sectie h3 {
+  font-size: 14px;
+  margin: 0 0 12px;
+}
+
+.fooi-knoppen {
+  display: flex;
+  gap: 10px;
+}
+
+.fooi-knoppen button {
+  flex: 1;
+  padding: 11px;
+
+  border: 1px solid #ded8d2;
+  border-radius: 8px;
+
+  background-color: #f7f5f2;
+  color: #514a44;
+
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.fooi-knoppen button:hover {
+  background-color: #ebe4dc;
+}
+
+.fooi-knoppen button.actief {
+  background-color: #76543d;
+  border-color: #76543d;
+  color: white;
+}
+
+/* Totaal */
+
+.totaal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 2px dashed #e5e0da;
+  padding-top: 20px;
+}
+
+.totaal span {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.totaal strong {
+  font-size: 25px;
+  color: #76543d;
+}
+
+/* Footer */
+
+.bonnetje-footer {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* verwijder knop */
+
+.verwijder-knop {
+  border: none;
+  background: #fbe9e7;
+  color: #c0392b;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.verwijder-knop:hover {
+  background: #c0392b;
+  color: white;
+}
+
+.verwijder-knop:focus-visible {
+  outline: 2px solid #c0392b;
+  outline-offset: 2px;
+}

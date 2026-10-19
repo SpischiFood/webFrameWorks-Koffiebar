@@ -3,12 +3,14 @@ import { Component, signal, computed } from '@angular/core';
 import { Hoofding } from './hoofding/hoofding';
 import { Drankkaart } from './drankkaart/drankkaart';
 //import { Bestelknop } from './bestelknop/bestelknop';
+import { Bonnetje } from './bonnetje/bonnetje';
 import { Voettekst } from './voettekst/voettekst';
 import { Bestellijn } from './bestellijn';
 import { Drank } from './dranken';
+import { Badge } from './badge/badge';
 
 @Component({
-  imports: [Hoofding, Drankkaart, Voettekst],
+  imports: [Hoofding, Drankkaart, Voettekst, Bonnetje],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
@@ -28,4 +30,9 @@ export class App {
   totaalAantal = computed(() => {
     return this.bestelling().reduce((som, lijn) => som + lijn.aantal, 0);
   });
+  verwijder(id: number) {
+    this.bestelling.update((lijst) => {
+      return lijst.filter((lijn) => lijn.drank.id !== id);
+    });
+  }
 }

@@ -1,0 +1,38 @@
+<section class="bonnetje">
+  <h2 class="bonnetje-header">Bonnetje</h2>
+  <ul class="bestellijnen">
+    @for (lijn of bonnetje(); track lijn.drank.id) {
+      <li class="bestellijn">
+        {{ lijn.aantal }}x {{ lijn.drank.naam }}
+        <span class="prijs">€ {{ (lijn.aantal * lijn.drank.prijs).toFixed(2) }}</span>
+        <button (click)="verwijder.emit(lijn.drank.id)" class="verwijder-knop">X</button>
+      </li>
+    } @empty {
+      <li class="leeg">Nog niets besteld.</li>
+    }
+  </ul>
+  <div class="samenvatting">
+    <p class="samenvatting-rij">
+      Aantal stuks <span>€ {{ aantalstuks() }}</span>
+    </p>
+    <p class="samenvatting-rij">
+      Subtotaal <span>€ {{ subtotaal().toFixed(2) }}</span>
+    </p>
+    <p class="samenvatting-rij korting">
+      Korting<span>- € {{ korting().toFixed(2) }}</span>
+    </p>
+  </div>
+  <div class="fooi-sectie">
+    <h3>fooi toevoegen</h3>
+    <div class="fooi-knoppen">
+      <button (click)="fooiPercentage.set(0)" [class.actief]="fooiPercentage() === 0">0%</button>
+      <button (click)="fooiPercentage.set(5)" [class.actief]="fooiPercentage() === 5">5%</button>
+      <button (click)="fooiPercentage.set(10)" [class.actief]="fooiPercentage() === 10">10%</button>
+    </div>
+  </div>
+  <div class="totaal">
+    <span>Totaal</span>
+    <strong>€ {{ totaal().toFixed(2) }}</strong>
+  </div>
+  <footer class="bonnetje-footer">Bedankt voor je bestelling!</footer>
+</section>
